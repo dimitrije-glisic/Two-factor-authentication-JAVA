@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <title>Login page</title>
+        <h:outputStylesheet library="css" name="styles.css"/>    
+    </h:head>
+    <h:body styleClass="bodyLogin">
+
+        <div class="center">
+            <div class="inCenter" style="margin-top: 7%">
+
+                <div style="width:100% ; margin:20px 0px 75px 0px ; color: gold ; font-family: arial ; font-size: 30px">
+                    Member login
+                </div>
+
+                <h:form id="loginForm" style="width: 100%">
+
+                    <p:inputText styleClass="box" id="username" value="#{loginController.username}" 
+                                 placeholder="Username" 
+                                 required="true" requiredMessage="Username required"/>
+                    <h:message for="username" style="color:red"/>
+                    <br/><br/>
+
+                    <p:password styleClass="box" id="password" value="#{loginController.password}" placeholder="Password"
+                                required="true" requiredMessage="Password required"/>
+                    <h:message for="password" style="color:red"/>
+                    <br/><br/><br/>
+                    <h:commandButton styleClass="loginButton" value="Login" action="#{loginController.login()}"/>
+                    
+                    
+                    <br/><br/><br/><br/>
+                                        
+                </h:form>  
+                <h:messages for="loginForm" style="color:red"/>
+            
+            
+                <h:form>
+                    <h:commandLink  value="Don't have an account? Sign up." 
+                                    style="color:blue"
+                                    action="#{names.page_index}"/>
+
+                </h:form>
+            
+            
+            </div>
+        </div>
+            
+
+    </h:body>
+</html>
+

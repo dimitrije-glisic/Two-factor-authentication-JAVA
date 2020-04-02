@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>TFA Wizard</title>
+        <h:outputStylesheet library="css" name="styles.css"/>    
+    </h:head>
+    <h:body>
+
+
+        <div class="center">
+            <div class="inCenter" style="margin-top: 10%">
+
+                <div style="width:100% ; margin:20px 0px 75px 0px ; color: gold ; font-family: arial ; font-size: 30px">
+                    TFA Authentication
+                </div>
+
+                <h:form id="tfaForm" style="width: 100%">
+
+                    <p:inputText styleClass="box" id="verifCode" value="#{tfaValidator.verificationCode}" placeholder="Verification code"
+                                 required="true" requiredMessage="Verification code requested"/>
+
+                    <br/><br/>
+
+                    <h:commandButton styleClass="loginButton" value="Validate"
+                                     action="#{tfaValidator.checkVerificationCode(loginController.username)}"/>
+
+                </h:form>  
+                <h:messages for="tfaForm" style="color:red ; border:none ; background-color: white"/>
+            </div>
+        </div>
+
+
+
+
+    </h:body>
+</html>
+
